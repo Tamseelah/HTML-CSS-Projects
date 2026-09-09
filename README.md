@@ -1,2 +1,2 @@
 # HTML-CSS-Projects
-This repository have my HTML coding assignments.
+This repository has my HTML coding assignments.
