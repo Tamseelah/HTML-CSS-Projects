@@ -3,6 +3,63 @@
     <head>
         <meta charset="UTF-8">
         <title>Biya's Salon | Premium Hair & Beauty Services</title>
+        <style>
+            /* Base Page Layout Setup */
+            body {
+                font-family: Ariel, sans_serif;
+                margin: 0;
+                padding: 20px;
+                line-height: 1.6;
+            }
+            nav ul {
+                padding-left: 0;
+                list-style: none;
+            }
+            nav ul li {
+                display: inline;
+                margin-right: 15px;
+            }
+            /* Gallery Thumbnail Styling*/
+            .gallery-container {
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+            }
+            .thumbnail {
+                cursor: pointer;
+                transition: opacity 0.2s;
+                border: 1px solid #ccc;
+            }
+            .thumbnail:hover {
+                opacity: 0.8;
+            }
+
+            /*Lightbox Overlay Background*/
+            .lightbox-modal {
+                display: none; /*Hidden by default*/
+                position: fixed;
+                z-index: 1000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                align-items: center;
+                justify-content: center;
+            }
+
+            /*Lightbox Image Structre*/
+            .lightbox-content {
+                max-width: 85%;
+                max-height: 80%;
+                border: 3px solid #fff;
+            }
+
+            /*Close Button Placement*/
+            .close-lightbox:hover{
+                color: #bbb;
+            }
+        </style>
     </head>
     <body>
         <!-- Header and Navigation Section -->
@@ -28,7 +85,8 @@
         <li>Haircuts and Styling</li>
         <li>Coloring and Highlighting</li>
         <li>Skincare Treatments</li>
-        <li>Spa Services</li>
+        <li>Bridal & Special Event Makeup</li>
+        <li>Nail Art & luxury Manicure</li>
     </ul>
     <p>Locally owned and trusted, we create a warm,welcoming atmosphere for all our clients.</p>
         </section>
@@ -36,29 +94,48 @@
         <!-- Gallery Section -->
          <section id="gallery">
             <h2>Our Gallery</h2>
-            <p>Check out our latest transformations and services!</p>
-            <!-- Image 1: Hair Styling -->
-             <img src="https://unsplash.com"
-             alt="Hairstylist working on a client's hair"
-             width="400"
-             height="300">
-             <!-- Image 2: Salon Interior -->
-             <img src="https://unsplash.com"
-             alt="Beautiful salon interior"
-             width="400"
-             height="300">
-             <!-- Image 3: Makeup/Beauty Treatment -->
-                <img src="https://unsplash.com"
-                alt="Makeup  products and cosmetics at the salon atation"
-                width="400"
-                height="300">
+            <p>Take a glance at some of our recent work. <strong>Click any picture below to open the light box:</strong></p>
+
+            <div class="gallery-container">
+                <!--Image 1-->
+                <img class="thumbnail"
+                src="https://unsplash.com"
+                alt="Hairstylist working on a client"
+                width="300"
+                height="225"
+                onclick="openlightbox(this.src)">
+
+                <!--Image 2-->
+                <img class="thumbnail"
+                src="https://unsplash.com"
+                alt="Modern interior setup of Biya's Salon"
+                width="300"
+                height="225"
+                onclick="openlightbox(this.src)">
+
+                <!--Image 3-->
+                <img class="thumbnail"
+                src="https://unsplash.com"
+                alt="Makeup products at the salon station"
+                width="300"
+                height="225"
+                onclick="openlightbox(this.src)">
+            </div>
         </section>
+
+        <!--Lightbox Modal View Containeer-->
+        <div id="salonLightbox" class="lightbox-modal">
+            <span class="close-lightbox" onclick="close-lightbox()">&times;</span>
+            <img class="lightbox-content" id="lightboxTargetImage" alt="expanded modal preview view">
+        </div>
+
         <hr>
+
         <!-- Videos Section -->
          <section id="videos">
             <h2>Behind the Scenes & Tutorials</h2>
             <p>Watch our team in action and learn some beauty tips!</p>
-            <!-- Embedded Youtube Video Player -->
+            
              <iframe width="560"
                 height="315"
                 src="https://youtube.com"
@@ -98,5 +175,9 @@
             <p>&copy; Biya's Salon. All rights reserved.</p>
             <p>Contact us at: info@biyasalon.com | Phone: (123) 456-7890</p>
          </footer>
+         
+         <!--HERE IS WHERE JAVASCRIPT FILE IS LINKED-->
+         <script src="one_page_website.js"></script>
+
     </body>
 </html>
