@@ -30,7 +30,8 @@ body{
 .navbar{
     background-color: var(--secondary-color);
     border-bottom: 5px solid rgb(98, 0, 0);
-    height: 100px;
+    min-height: 100px;
+    height: auto;
 }
 
 /*Affects the title in the navbar Academy Cinmas*/
@@ -118,7 +119,7 @@ body{
 }
 
 /*Menu links suck as Now Playing*/
-.navbar-dark .navbar-nav .navbar-link{
+.navbar-dark .navbar-nav .nav-link{
     color: var(--main-color-accent);
 }
 
